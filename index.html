@@ -1,79 +1,342 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="theme-color" content="#000000">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpaceMax</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+    <title>SpaceMa𝕏</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <style>
-    .container {
-        display: flex;
-    }
-
-    .block {
-        flex: 1;
-        height: 500px;
-    }
-
-    input::placeholder {text-align: center;
-    font-size: 20px;}
-
-    .itemform {display: block;
-        width: 300px;
-        height: 40px;
-        margin-top: 15px;}
-
-    #iframenasa {}
+    body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Orbitron', sans-serif;
+}
+    
+    .tela {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;}
 
     #titulosite {color: aliceblue;
-        margin-left: 30px;}
+    flex: 0.40;}
 
-    #divitensform {flex-direction: column;
-        display: flex;
-        align-items: center;
-        height: 360px;
-        padding: 30px;
-        border: 15px  rgb(0, 0, 0);
-        border-radius: 30px;
-        border-style: double;
-        background-color: rgb(255, 255, 255);}
+    #divtitulo {
+    z-index: 1000;
+    width: 100%;
+    height: 15vh;
+    font-size: 25px;
+    padding-left: 40px;
+    display: flex;
+    position: fixed;
+    top: 0;
+    transition: opacity 0.5s ease;
+}
 
-    #botaosubmit {margin-top: 40px;
-        height: 40px;
-        width: 160px;
-        border-radius: 14px;
-        position: relative;
-        left: 25%;}
+    .tela1 {background-image: url(https://apod.nasa.gov/apod/image/1612/ic4628_colombari_1853.jpg);}
 
-    #register {text-decoration: none;
-    color: black;
-    margin-top: 20px;
+    .tela2 {
+    background-image: url(https://apod.nasa.gov/apod/image/1412/flameVisIR_eso_1250.jpg);
+    background-size: cover;}
+
+    .tela3 {
+    background-image: url(https://apod.nasa.gov/apod/image/0712/eaglefairy_hst_big.jpg);
+    background-size: cover;}
+
+    .infoboxs {
+    padding-left: 20px;
+    border-radius: 20px;
+    background-color: rgba(18, 14, 30, 0.395);
+    color: aliceblue;
+    position: absolute;
+    bottom: 80px;
+    left: 80px;
+    width: 600px;
+    box-shadow: 0 0 10px rgb(0, 0, 0);}
+
+    .h1box {font-size: 50px;}
+
+    .pbox {font-size: 25px;}
+
+    .linkbox {text-decoration: none;
+    color: blueviolet;
+    background-color: rgba(21, 1, 32, 0.722);
+    border-radius: 8px;
+    padding-left: 4px;
+    padding-right: 4px;}
+
+    .menu {
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    width: 100%;
+    justify-content: center;
+}
+
+    .menu ul {
+    margin-top: 40px;
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+    .menu ul li {
+    
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+    .menu ul li:last-child {
+    margin-right: 0;
+}
+
+    .menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    vertical-align: middle;
+}
+
+    .menu2 {
+    color: rgb(240, 240, 240);
+    padding: 10px 0;
+    text-align: center;
+    font-size: 35px;
+}
+
+    .menu-item2 {
+    position: relative;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+    .menu-btn2 {
+    color: white;
+    border: none;
+    text-align: left;
+    padding: 10px;
+    cursor: pointer;
+}
+
+    .submenu2 {
+    display: none;
+    position: absolute;
+    background-color: rgba(21, 1, 32, 0.722);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    left: -30px;
+    top: 100%;
+    z-index: 1;
+}
+
+    .menu-item2:hover .submenu2 {
+    border-radius: 12px;
+    display: block;
+}
+
+    .submenu2 a {
+    display: block;
+    padding: 10px;
     font-size: 20px;
-    }
+    text-decoration: none;
+    color: white;
+}
 
+    .submenu2 a:hover {
+    background-color: rgba(21, 1, 32, 0.847);
+    border-radius: 12px;
+}
+
+    .container3 {
+    position: absolute;
+    right: 25px;
+    top: 5px;
+    color: antiquewhite;
+    border-radius: 12px;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(18, 14, 30, 0.395);;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+        }
+
+    table {
+    width: 100%;
+    border-collapse: collapse;
+        }
+
+    th, td {
+    padding: 10px;
+    text-align: left;
+        }
+
+    th {
+    background-color: #1607218b;
+    color: #fff;
+        }
+
+    tr:nth-child(even) {
+    background-color: #20012f5a;
+        }
     </style>
 </head>
-<body style="background-color: black;">
-    <div><h1 id="titulosite">SpaceMax</h1></div>
-    <container class="container" id="divformprime">
+<body>
 
-        <div class="block"><iframe src="https://solarsystem.nasa.gov/gltf_embed/2392/" frameborder="0" height="90%" width="100%" id="iframenasa"></iframe></div>
+    <header id="divtitulo">
+        <h1 id="titulosite"><a style="text-decoration: none; color: whitesmoke;" href="index.html">SpaceMa𝕏</a></h1>
 
-        <div id ="divitensform" class="block" style="font-size: 25px;">
-        <h1>Login to SpaceMax</h1>
-        
-        <form action="">
-
-        <input class="itemform" type="text" placeholder="Digite seu email">
-
-        <input class="itemform" type="text" placeholder="Digite sua senha">
-
-        <input id="botaosubmit" type="submit" value="Enviar">
-        </form>
-
-        <a id="register" href="registrar.html">registre-se</a>
+        <div class="menu">
+            <ul>
+                <li><a href="#tela1">Bem-vindo</a></li>
+                <li><a href="#tela2">Explore</a></li>
+                <li><a href="#tela3">Comunidade</a></li>
+                <li>
+                    <div class="menu2">
+                    <div class="menu-item2">
+                        <div class="menu-btn2">Menu</div>
+                        <div class="submenu2">
+                            <a href="logar.html">Login</a>
+                            <a href="registrar.html">Cadastro</a>
+                            <a href="#">Documentários</a>
+                            <a href="#">Notícias</a>
+                            <a href="#">Pesquisas</a>
+                        </div>
+                    </div>
+                </div>
+                </li>
+            </ul>
         </div>
+    </header>
 
-    </container>
+    <section id="tela1" style="position: relative;" title="2016 December 09: IC 4628: The Prawn Nebula | nasa" class="tela tela1">
+        <article class="infoboxs">
+            <div>
+              <h1 class="h1box">Olá, seja bem-vindo ao SpaceMa𝕏</h1>
+              <time style="font-size: 40px;">09.09.2023</time>
+            </div>
+            <p class="pbox">Este é um site para fim cientíco a fim de noticiar principais acontecimentos da astronomia!</p>
+          </article>
+    </section>
+
+    <section id="tela2" style="position: relative;" title="2014 December 09: The Flame Nebula in Visible and Infrared | nasa" class="tela tela2">
+        <article class="infoboxs" style="width: 550px;">
+            <div>
+              <h1 class="h1box">Explore!</h1>
+            </div>
+            <p class="pbox">Veja algumas de nossas seções: <a href="#" class="linkbox">documentários</a>, <a href="#" class="linkbox">notícias</a> e <a href="#" class="linkbox">pesquisas</a>. (Estes sites aqui, por hora, são ilustrativos)</p>
+          </article>
+
+          <div class="container3">
+            <h2>Planetas do Sistema Solar</h2>
+            <table>
+                <tr>
+                    <th>Planeta</th>
+                    <th>Diâmetro (km)</th>
+                    <th>Massa (kg)</th>
+                    <th>Gravidade (m/s²)</th>
+                    <th>Distância do Sol (milhões de km)</th>
+                </tr>
+                <tr>
+                    <td>Mercúrio</td>
+                    <td>4,880</td>
+                    <td>3.30e23</td>
+                    <td>3.7</td>
+                    <td>57.9</td>
+                </tr>
+                <tr>
+                    <td>Vênus</td>
+                    <td>12,104</td>
+                    <td>4.87e24</td>
+                    <td>8.9</td>
+                    <td>108.2</td>
+                </tr>
+                <tr>
+                    <td>Terra</td>
+                    <td>12,742</td>
+                    <td>5.97e24</td>
+                    <td>9.8</td>
+                    <td>149.6</td>
+                </tr>
+                <tr>
+                    <td>Marte</td>
+                    <td>6,779</td>
+                    <td>6.42e23</td>
+                    <td>3.7</td>
+                    <td>227.9</td>
+                </tr>
+                <tr>
+                    <td>Júpiter</td>
+                    <td>139,822</td>
+                    <td>1.90e27</td>
+                    <td>24.8</td>
+                    <td>778.3</td>
+                </tr>
+                <tr>
+                    <td>Saturno</td>
+                    <td>116,464</td>
+                    <td>5.68e26</td>
+                    <td>10.4</td>
+                    <td>1,426.7</td>
+                </tr>
+                <tr>
+                    <td>Urano</td>
+                    <td>50,724</td>
+                    <td>8.68e25</td>
+                    <td>8.7</td>
+                    <td>2,870.9</td>
+                </tr>
+                <tr>
+                    <td>Netuno</td>
+                    <td>49,244</td>
+                    <td>1.02e26</td>
+                    <td>11.2</td>
+                    <td>4,498.3</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section id="tela3" style="position: relative;" title="2007 December 09: The Fairy of Eagle Nebula | nasa" class="tela tela3">
+        <article class="infoboxs">
+            <div>
+              <h1 class="h1box">Interaja com a comunidade</h1>
+            </div>
+            <p class="pbox">Faça seu <a href="logar.html" class="linkbox">login</a> ou <a href="registrar.html" class="linkbox">cadastro</a></p>
+          </article>
+
+          <footer style="padding-left: 8px; padding-right: 8px; border-radius: 15px; margin-bottom: 8px; background-color:rgba(19, 19, 55, 0.481); position: absolute; bottom: 0; right: 12px; box-shadow: 0 0 10px rgb(0, 0, 0);"><p style="color: rgb(211, 211, 211); text-align: right; margin-right: 3px;">Copyright © 2023 | Todos direitos do site reservado para o Joenyr Couto | Fotos de fundo reservadas à nasa.</p></footer>
+    </section>
 </body>
+<script>
+    let elementoDesvanecimento = document.getElementById("divtitulo");
+let ultimoScroll = window.pageYOffset;
+
+window.addEventListener("scroll", function() {
+    let scrollAtual = window.pageYOffset;
+
+    if (scrollAtual > ultimoScroll) {
+        // Rolagem para baixo
+        elementoDesvanecimento.style.opacity = "0";
+        elementoDesvanecimento.style.pointerEvents = "none";
+    } else {
+        // Rolagem para cima
+        elementoDesvanecimento.style.opacity = "1";
+        elementoDesvanecimento.style.pointerEvents = "auto";
+    }
+
+    ultimoScroll = scrollAtual;
+});
+</script>
 </html>

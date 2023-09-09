@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
     <meta charset="UTF-8">
     <meta name="theme-color" content="#000000">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SpaceMa𝕏</title>
     <style>
-    /* Estilos CSS para cobrir o fundo da página com estrelas */
     body {
         margin: 0;
         overflow: hidden;
         background-color: black;
         position: relative;
+        font-family: 'Orbitron', sans-serif;
     }
 
-    /* Estilos CSS para as estrelas */
     .star {
         position: absolute;
         width: 2px;
@@ -23,7 +26,6 @@
         border-radius: 50%;
     }
 
-    /* Keyframes para animação de movimento */
     @keyframes moveStar {
         0% {
             transform: translateY(-2px);
@@ -33,19 +35,33 @@
         }
     }
 
-    /* Container para as estrelas */
     #stars-container {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: -1; /* Coloca o container das estrelas atrás do conteúdo */
+        z-index: -1;
     }
 
     .container {
         display: flex;
     }
+
+    .containerform {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .campo {
+            display: inline-block;
+            font-size: 22px;
+            margin-top: 12px;
+        }
 
     .block {
         flex: 1;
@@ -82,12 +98,13 @@
         border-style: double;
         background-color: rgb(246, 246, 246);}
 
-    #botaosubmit {margin-top: 40px;
+    #botaosubmit {
+        background-color: rgb(48, 28, 68);
+        color: antiquewhite;
+        margin-top: 10px;
         height: 40px;
         width: 160px;
-        border-radius: 14px;
-        position: relative;
-        left: 25%;}
+        border-radius: 14px;}
 
     #noformat {text-decoration: none;
     color: black;
@@ -114,38 +131,78 @@
         display: flex;}
 
     .itenstitulo {flex: 1;}
+
+    .select {
+        border-radius: 6px;
+        height: 35px;
+    }
     </style>
 </head>
 
+<body>
 <container class="divitensform" id="divformall">
-    <body>
-        <!-- Container para as estrelas -->
         <div id="stars-container"></div>
         
-    <div id="divtitulo">
-        <h1 id="titulosite">SpaceMa𝕏</h1>
+    <header id="divtitulo">
+        <h1 id="titulosite"><a style="text-decoration: none; color: whitesmoke;" href="index.html">SpaceMa𝕏</a></h1>
         <div class="itenstitulo" style="display: flex;">
-            <a id="noformat2" class="itenstitulo" href=""><h2>documentários</h2></a>
-            <a id="noformat2" class="itenstitulo" href=""><h2>notícias</h2></a>
-            <a id="noformat2" class="itenstitulo" href=""><h2>pesquisas</h2></a>
+            <a id="noformat2" class="itenstitulo" href="#"><h2>documentários</h2></a>
+            <a id="noformat2" class="itenstitulo" href="#"><h2>notícias</h2></a>
+            <a id="noformat2" class="itenstitulo" href="#"><h2>pesquisas</h2></a>
         </div>
-    </div>
+    </header>
 
         <container id="divformall" class="container block">
 
             <div id ="divitensform" class="block" style="font-size: 25px; margin-left: 7%; padding-bottom: 80px; margin-right: 120px;">
-            <h1>registrar-se em SpaceMa𝕏</h1>
+            
+            <h1 style="font-size: 45px; margin-bottom: 12px; margin: 8px;">registrar-se em SpaceMa𝕏</h1>
             
             <form action="">
 
-            <div>
-                <input class="itemform2" type="text" placeholder="Digite seu email"><input class="itemform2" type="text" placeholder="Digite sua senha">
+            <div class="containerform">
+                <div class="campo">
+                    <input class="itemform2" type="email" placeholder="Digite um email"><input class="itemform2" type="password" placeholder="Digite um senha">
+                </div>
+
+                <div class="campo">
+                    <label for="sexo">Qual seu sexo:</label>
+                    <input type="radio" name="sexo" id="masculino" value="masculino">
+                    <label for="masculino">Masculino</label>
+                    <input type="radio" name="sexo" id="feminino" value="feminino">
+                    <label for="feminino">Feminino</label>
+                </div>
+    
+                <div class="campo">
+                    <label for="interesses">O que você gosta:</label>
+                    <input type="checkbox" name="interesses" id="astronomia" value="astronomia">
+                    <label for="astronomia">Astronomia</label>
+                    <input type="checkbox" name="interesses" id="mecanica" value="mecanica">
+                    <label for="mecanica">Mecânica</label>
+                    <input type="checkbox" name="interesses" id="tecnologia" value="tecnologia">
+                    <label for="tecnologia">Tecnologia</label>
+                </div>
+    
+                <div class="campo">
+                    <label for="data-nascimento">Selecione sua data de nascimento:</label>
+                    <select class="select" name="dia" id="dia">
+                        <option value="1">1</option>
+                    </select>
+                    <select class="select" name="mês" id="mês">
+                        <option value="1">Janeiro</option>
+                    </select>
+                    <select class="select" name="ano" id="ano">
+                        <option value="2023">2023</option>
+                    </select>
+                </div>
+
+                <input class="campo" id="botaosubmit" type="submit" value="Enviar">
+
             </div>
 
-            <input id="botaosubmit" type="submit" value="Enviar">
             </form>
 
-            <p><a id="noformat" href="logar.html">logar</a>
+            <p><a id="noformat" href="logar.html">Já tenho uma conta</a>
             </div>
 
             <div class="block" style=" border-radius: 20px; height: 450px; width: 400px;">
@@ -154,7 +211,7 @@
 
         </container>
 
-        <div style="height: 5vh; align-items: center;"><p style="color: rgb(174, 174, 174); text-align: right; margin-right: 3px;">©2023 Todos direitos do site reservado para o Joenyr Couto | Lua reservado à nasa.</p></div>
+        <footer style="height: 5vh; align-items: center;"><p style="color: rgb(174, 174, 174); text-align: right; margin-right: 3px;">Copyright © 2023 | Todos direitos do site reservado para o Joenyr Couto | Lua reservada à nasa.</p></footer>
     </body>
     <script>
         // Função para criar uma estrela e definir sua animação

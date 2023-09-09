@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
     <meta charset="UTF-8">
     <meta name="theme-color" content="#000000">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SpaceMa𝕏</title>
     <style>
-    /* Estilos CSS para cobrir o fundo da página com estrelas */
     body {
         margin: 0;
         overflow: hidden;
         background-color: black;
         position: relative;
+        font-family: 'Orbitron', sans-serif;
     }
 
-    /* Estilos CSS para as estrelas */
     .star {
         position: absolute;
         width: 2px;
@@ -23,7 +26,6 @@
         border-radius: 50%;
     }
 
-    /* Keyframes para animação de movimento */
     @keyframes moveStar {
         0% {
             transform: translateY(-2px);
@@ -33,14 +35,13 @@
         }
     }
 
-    /* Container para as estrelas */
     #stars-container {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: -1; /* Coloca o container das estrelas atrás do conteúdo */
+        z-index: -1;
     }
 
     .container {
@@ -69,12 +70,15 @@
         align-items: center;
         height: 360px;
         padding: 30px;
-        border: 15px  rgb(0, 0, 0);
+        border: 15px  rgba(0, 0, 0);
         border-radius: 30px;
         border-style: double;
         background-color: rgb(246, 246, 246);}
 
-    #botaosubmit {margin-top: 40px;
+    #botaosubmit {
+        background-color: rgb(48, 28, 68);
+        color: antiquewhite;
+        margin-top: 40px;
         height: 40px;
         width: 160px;
         border-radius: 14px;
@@ -103,25 +107,25 @@
         height: 15vh;
         font-size: 25px;
         padding-left: 40px;
-        display: flex;}
+        display: flex;
+        justify-content: center;}
 
     .itenstitulo {flex: 1;}
     </style>
 </head>
 
+<body>
 <container class="divitensform" id="divformall">
-    <body>
-        <!-- Container para as estrelas -->
         <div id="stars-container"></div>
         
-    <div id="divtitulo">
-        <h1 id="titulosite">SpaceMa𝕏</h1>
+    <header id="divtitulo">
+        <h1 id="titulosite"><a style="text-decoration: none; color: whitesmoke;" href="index.html">SpaceMa𝕏</a></h1>
         <div class="itenstitulo" style="display: flex;">
-            <a id="noformat2" class="itenstitulo" href=""><h2>documentários</h2></a>
-            <a id="noformat2" class="itenstitulo" href=""><h2>notícias</h2></a>
-            <a id="noformat2" class="itenstitulo" href=""><h2>pesquisas</h2></a>
+            <a id="noformat2" class="itenstitulo" href="#"><h2>documentários</h2></a>
+            <a id="noformat2" class="itenstitulo" href="#"><h2>notícias</h2></a>
+            <a id="noformat2" class="itenstitulo" href="#"><h2>pesquisas</h2></a>
         </div>
-    </div>
+    </header>
 
         <container id="divformall" class="container block">
 
@@ -134,19 +138,19 @@
             
             <form action="">
 
-            <input class="itemform" type="text" placeholder="Digite seu email">
+            <input class="itemform" type="email" placeholder="Digite seu email">
 
-            <input class="itemform" type="text" placeholder="Digite sua senha">
+            <input class="itemform" type="password" placeholder="Digite sua senha">
 
             <input id="botaosubmit" type="submit" value="Enviar">
             </form>
 
-            <p><a id="noformat" href="registrar.html">registre-se</a> | <a id="noformat" href="">esqueceu a senha</a></p>
+            <p style="margin-top: 43px;"><a id="noformat" href="registrar.html">registre-se</a> | <a id="noformat" href="">esqueci a senha</a></p>
             </div>
 
         </container>
 
-        <div style="height: 5vh; align-items: center;"><p style="color: rgb(174, 174, 174); text-align: right; margin-right: 3px;">©2023 Todos direitos do site reservado para o Joenyr Couto | Planeta reservado à nasa.</p></div>
+        <footer style="height: 5vh; align-items: center;"><p style="color: rgb(174, 174, 174); text-align: right; margin-right: 3px;">Copyright © 2023 | Todos direitos do site reservado para o Joenyr Couto | Planeta reservado à nasa.</p></footer>
     </body>
     <script>
         // Função para criar uma estrela e definir sua animação
